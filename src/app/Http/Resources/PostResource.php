@@ -14,7 +14,6 @@ class PostResource extends JsonResource
      */
     public function toArray($request)
     {
-        //return parent::toArray($request);
         return [
             'id' => $this->id,
             'title' => $this->title,
@@ -25,8 +24,7 @@ class PostResource extends JsonResource
             //'comments' => CommentResource::collection($this->comments),
             'created_at' => $this->created_at->toDateTimeString(),
             'updated_at' => $this->updated_at,
-            'deleted_at' => $this->deleted_at,
-
+            'deleted_at' => $this->deleted_at
         ];
     }
 }

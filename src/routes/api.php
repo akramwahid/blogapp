@@ -19,9 +19,12 @@ use App\Http\Controllers\Api\PostCommentController;
 
 Route::post('/posts/image/upload', [PostController::class, 'upload']);
 
-Route::apiResources([
-    'authors' => AuthorController::class,
-    'posts' => PostController::class
+Route::apiResource('authors', AuthorController::class)->only([
+    'index', 'store', 'show'
 ]);
 
-Route::apiResource('posts.comments', PostCommentController::class)->shallow();
+Route::apiResource('posts', PostController::class);
+
+Route::apiResource('posts.comments', PostCommentController::class)->shallow()->except([
+    'show', 'update'
+]);

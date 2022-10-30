@@ -20,8 +20,7 @@ class CommentResource extends JsonResource
             'post_id' => $this->post_id,
             'created_at' => $this->created_at->toDateTimeString(),
             'updated_at' => $this->updated_at,
-            'deleted_at' => $this->deleted_at,
-
+            'deleted_at' => $this->deleted_at
         ];
     }
 }
