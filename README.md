@@ -43,4 +43,15 @@ then run the following artisan command in terminal to setup the database tables
 next run the following command to seed some test data in to the database (authors, posts, comments)
 `docker-compose run --rm artisan db:seed`
 
+*** if you want to rebuild database tables and seed fresh data, you can do it with `docker-compose run --rm artisan migrate:fresh --seed` ***
 
+next run the following command To make the uploaded posts image files accessible from the web,
+Following command will create a symbolic link from `public/storage` to `storage/app/public`
+ 
+`docker-compose run --rm artisan storage:link`
+
+next run the following command to install npm modules
+`docker-compose run --rm npm install`
+
+next run the following command to build the frontend project
+`docker-compose run --rm npm run dev`
