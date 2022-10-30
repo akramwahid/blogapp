@@ -16,4 +16,10 @@ source code if you are running it in your own server.***
 make sure you have Docker System (Docker desktop for mac/windows) installed on your system.
 
 in your terminal navigate to the directory where you cloned the project, and spin up the containers for nginx,php,mysql 
-by running `docker-compose up -d --build app`.
+by running `docker-compose up -d --build app`. This will run all necessary containers to run the project.
+By default the mysql will run in port 3306, if you need to adjust the port or container namees, 
+you can do it in `docker-compose.yml` file.
+
+
+
+
