@@ -23,11 +23,11 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'resources/assets/theme/styles/menu/css/style.css'
     ], 'public/css/style.css');
 
-// mix.webpackConfig({
-//     resolve: {
-//         alias: {
-//             'vue$': 'vue/dist/vue.runtime.esm.js'
-//         }
-//     }
-// });
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.runtime.esm.js'
+        }
+    }
+});
 

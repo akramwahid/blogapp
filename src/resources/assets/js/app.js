@@ -27,6 +27,7 @@ Vue.mixin({
                     message += '<li>UnAuthorized</li>';
                 } else if (error.response.status === 404) {
                     message += '<li>API Route is Missing or Undefined</li>';
+                    this.$router.push({name: 'posts'});
                 } else if (error.response.status === 405) {
                     message += '<li>API Route Method Not Allowed</li>';
                 } else if (error.response.status === 422) {
