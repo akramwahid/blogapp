@@ -24,7 +24,7 @@ to your web server directory.
     source code if you are running it in your own web server.***
 
 ---
-#1 Spin up docker container
+#1 __Spin up docker container__
 
 make sure you have Docker System (Docker desktop for mac/windows) installed on your system.
 
@@ -40,7 +40,7 @@ you can do it in `docker-compose.yml` file.
 ---
 
 
-#2 Install the Laravel Project
+#2 __Install the Laravel Project__
 
  proceed and type the following commands in your terminal to install the project.
 
@@ -52,7 +52,7 @@ and name it as `.env`.
   
 --- 
   
-#3 Adjust Database Configuration
+#3 __Adjust Database Configuration__
 
 By default the database configuration values in `.env.example` file are set to match the mysql containers default
 values so the `.env` is good to go, however it is not a best practise to commit senstive info in source version control.
@@ -63,47 +63,58 @@ However i am doing it purposely to make it easy to run the project.
 
 ---
 
-#4 Running Database migration and seeding test data
+#4 __Running Database migration and seeding test data__
 
 next run the following artisan command in terminal to setup the database tables
+
 `docker-compose run --rm artisan migrate`
 
 next run the following command to seed some test data in to the database (authors, posts, comments)
+
 `docker-compose run --rm artisan db:seed`
 
 *** if you want to rebuild database tables and seed fresh data, you can do it with 
+
 `docker-compose run --rm artisan migrate:fresh --seed` ***
 
 
 
 ---
 
-#5 Create a symbolic link
+#5 __Create a symbolic link__
 
 run the following command To make the uploaded posts image files accessible from the web,
 Following command will create a symbolic link from `public/storage` to `storage/app/public`
  
  `docker-compose run --rm artisan storage:link`
  
- 
 
 ---
 
-#6 Compiling frontend assets (Optional)
+#6 __View the project in browser__
+
+you can access the project in the url of `http://localhost:8087`
+
+you can access the phpmyadmin database client in `http://localhost:8088`
+
+
+#7 __Compiling frontend assets (Optional)__
 
 This step is only required if you do any changes to the frontend code files, otherwise skip this section because I have 
 made a production build of the frontend already
 
 if you want rebuild frontend assets, you may run the following command to install npm modules
+
 `docker-compose run --rm npm install`
 
 and the run the following command to build the frontend in development environment 
+
 `docker-compose run --rm npm run dev`
 
 
 ---
 
-#7 Testing with PHPUnit (Optional)
+#8 Testing with PHPUnit (Optional)
 I have added some test cases in the `/src/tests` directory 
 To run the tests cases, execute following command
 
@@ -112,8 +123,3 @@ To run the tests cases, execute following command
 
 ---
 
-#8 View the project in browser 
-
-you can access the project in the url of `http://localhost:8087`
-
-you can access the phpmyadmin database client in `http://localhost:8088`
