@@ -46,19 +46,18 @@ you can do it in `docker-compose.yml` file.
 
 `docker-compose run --rm composer install`
 
-once the project is successfully installed, make a copy of `.env.example` placed in the project source code root `/src/`
-and name it as `.env`.
-  
-  
---- 
+---
   
 #3 __Adjust Database Configuration__
 
-By default the database configuration values in `.env.example` file are set to match the mysql containers default
-values so the `.env` is good to go, however it is not a best practise to commit senstive info in source version control.
-However i am doing it purposely to make it easy to run the project.  
+make a copy of `.env.example` placed in the source code root `/src` and name it as `.env`.
 
-*** If you are running the project in your own server, you must adjust the database configurations in `.env` file. ***
+
+By default the database configuration values in `.env.example` file are set to match the mysql containers default
+values so you don't need to anything further.
+
+
+    it is not a best practise to commit senstive info in source version control. However i am doing it purposely to make it easy to run the project.
 
 
 ---
@@ -72,6 +71,7 @@ next run the following artisan command in terminal to setup the database tables
 next run the following command to seed some test data in to the database (authors, posts, comments)
 
 `docker-compose run --rm artisan db:seed`
+
 
 *** if you want to rebuild database tables and seed fresh data, you can do it with 
 
@@ -114,12 +114,12 @@ and the run the following command to build the frontend in development environme
 
 ---
 
-#8 Testing with PHPUnit (Optional)
+#8 __Testing with PHPUnit (Optional)__
+
 I have added some test cases in the `/src/tests` directory 
 To run the tests cases, execute following command
 
 `docker-compose run --rm artisan test`
-
 
 ---
 
