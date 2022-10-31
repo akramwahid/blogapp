@@ -23,6 +23,7 @@ you can do it in `docker-compose.yml` file.
 *** If the previous step is successful, you can access the project in the url of `http://localhost:8087` ***
 *** If the previous step is successful, you can access the phpmyadmin database client in `http://localhost:8088` ***
 
+#Install Laravel Project
 next proceed and type the following commands in terminal to install the laravel project dependencies.
 
 `docker-compose run --rm composer install`
@@ -30,28 +31,37 @@ next proceed and type the following commands in terminal to install the laravel 
 once the project is successfully installed, make a copy of `.env.example` placed in the project source code root `/src/`
 and name it as `.env`.
   
+#Adjust Database Configuration
 By default the database configuration values in `.env.example` file are set to match the mysql containers default
 values so the `.env` is, however it is not a best practise to commit senstive info in source version control.
 However i am doing it purposely to make it easy to run the project.  
 
 *** If you are running the project in your own server, you must adjust the database configurations in `.env` file. ***
 
-
+#Running Database migration and seeding test data
 then run the following artisan command in terminal to setup the database tables
 `docker-compose run --rm artisan migrate`
 
 next run the following command to seed some test data in to the database (authors, posts, comments)
 `docker-compose run --rm artisan db:seed`
 
-*** if you want to rebuild database tables and seed fresh data, you can do it with `docker-compose run --rm artisan migrate:fresh --seed` ***
+*** if you want to rebuild database tables and seed fresh data, you can do it with 
+`docker-compose run --rm artisan migrate:fresh --seed` ***
 
+#create a symbolic link to make uploaded files visible in web
 next run the following command To make the uploaded posts image files accessible from the web,
 Following command will create a symbolic link from `public/storage` to `storage/app/public`
  
 `docker-compose run --rm artisan storage:link`
 
-next run the following command to install npm modules
+#compiling frontend assets
+if you want rebuild frontend assets, you may run the following command to install npm modules
 `docker-compose run --rm npm install`
 
-next run the following command to build the frontend project
+and the run the following command to build the frontend
 `docker-compose run --rm npm run dev`
+
+#Testing with PHPUnit
+I have added some test cases in the `tests` directory 
+To run the tests cases, execute following command
+`docker-compose run --rm artisan test`

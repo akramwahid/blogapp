@@ -34,29 +34,6 @@ class PostCommentController extends Controller
         return new CommentResource($comment);
     }
 
-//    /**
-//     * Display the specified resource.
-//     *
-//     * @param  \App\Models\Blog\Comment  $comment
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function show(Comment $comment)
-//    {
-//        return new CommentResource($comment);
-//    }
-
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param  \App\Http\Requests\UpdateCommentRequest  $request
-//     * @param  \App\Models\Blog\Comment  $comment
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function update(UpdateCommentRequest $request, Comment $comment)
-//    {
-//        $comment->update($request->validated());
-//        return new CommentResource($comment);
-//    }
 
     /**
      * Remove the specified resource from storage.

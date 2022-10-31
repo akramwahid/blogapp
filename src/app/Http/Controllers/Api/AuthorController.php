@@ -42,29 +42,4 @@ class AuthorController extends Controller
     {
         return new AuthorResource($author);
     }
-
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param  \App\Http\Requests\UpdateAuthorRequest  $request
-//     * @param  \App\Models\Blog\Author  $author
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function update(UpdateAuthorRequest $request, Author $author)
-//    {
-//        $author->update($request->validated());
-//        return new AuthorResource($author);
-//    }
-//
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param  \App\Models\Blog\Author  $author
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function destroy(Author $author)
-//    {
-//        $author->delete();
-//        return response()->noContent();
-//    }
 }
