@@ -24,6 +24,7 @@ to your web server directory.
     source code if you are running it in your own web server.***
 
 
+
 #1 Spin up docker container
 
 make sure you have Docker System (Docker desktop for mac/windows) installed on your system.
@@ -36,6 +37,9 @@ by running
 By default the mysql will run in port 3306, if you need to adjust the port or container names incase of conflicts, 
 you can do it in `docker-compose.yml` file.
 
+
+
+
 #2 Install the Laravel Project
 
  proceed and type the following commands in your terminal to install the project.
@@ -45,6 +49,9 @@ you can do it in `docker-compose.yml` file.
 once the project is successfully installed, make a copy of `.env.example` placed in the project source code root `/src/`
 and name it as `.env`.
   
+  
+  
+  
 #3 Adjust Database Configuration
 
 By default the database configuration values in `.env.example` file are set to match the mysql containers default
@@ -52,6 +59,9 @@ values so the `.env` is good to go, however it is not a best practise to commit 
 However i am doing it purposely to make it easy to run the project.  
 
 *** If you are running the project in your own server, you must adjust the database configurations in `.env` file. ***
+
+
+
 
 #4 Running Database migration and seeding test data
 
@@ -64,12 +74,18 @@ next run the following command to seed some test data in to the database (author
 *** if you want to rebuild database tables and seed fresh data, you can do it with 
 `docker-compose run --rm artisan migrate:fresh --seed` ***
 
+
+
+
 #5 Create a symbolic link
 
 run the following command To make the uploaded posts image files accessible from the web,
 Following command will create a symbolic link from `public/storage` to `storage/app/public`
  
  `docker-compose run --rm artisan storage:link`
+ 
+ 
+
 
 #6 Compiling frontend assets (Optional)
 
@@ -83,11 +99,15 @@ and the run the following command to build the frontend in development environme
 `docker-compose run --rm npm run dev`
 
 
+
+
 #7 Testing with PHPUnit (Optional)
 I have added some test cases in the `/src/tests` directory 
 To run the tests cases, execute following command
 
 `docker-compose run --rm artisan test`
+
+
 
 #8 View the project in browser 
 
