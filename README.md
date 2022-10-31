@@ -21,6 +21,7 @@ By default the mysql will run in port 3306, if you need to adjust the port or co
 you can do it in `docker-compose.yml` file.
 
 *** If the previous step is successful, you can access the project in the url of `http://localhost:8087` ***
+
 *** If the previous step is successful, you can access the phpmyadmin database client in `http://localhost:8088` ***
 
 #Install Laravel Project
