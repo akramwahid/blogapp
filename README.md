@@ -23,8 +23,7 @@ to your web server directory.
     *** As this is a laravel project, Please make sure the site root is pointing to `/public` folder in the 
     source code if you are running it in your own web server.***
 
-
-
+---
 #1 Spin up docker container
 
 make sure you have Docker System (Docker desktop for mac/windows) installed on your system.
@@ -38,6 +37,7 @@ By default the mysql will run in port 3306, if you need to adjust the port or co
 you can do it in `docker-compose.yml` file.
 
 
+---
 
 
 #2 Install the Laravel Project
@@ -50,7 +50,7 @@ once the project is successfully installed, make a copy of `.env.example` placed
 and name it as `.env`.
   
   
-  
+--- 
   
 #3 Adjust Database Configuration
 
@@ -61,7 +61,7 @@ However i am doing it purposely to make it easy to run the project.
 *** If you are running the project in your own server, you must adjust the database configurations in `.env` file. ***
 
 
-
+---
 
 #4 Running Database migration and seeding test data
 
@@ -76,6 +76,7 @@ next run the following command to seed some test data in to the database (author
 
 
 
+---
 
 #5 Create a symbolic link
 
@@ -86,6 +87,7 @@ Following command will create a symbolic link from `public/storage` to `storage/
  
  
 
+---
 
 #6 Compiling frontend assets (Optional)
 
@@ -99,7 +101,7 @@ and the run the following command to build the frontend in development environme
 `docker-compose run --rm npm run dev`
 
 
-
+---
 
 #7 Testing with PHPUnit (Optional)
 I have added some test cases in the `/src/tests` directory 
@@ -108,6 +110,7 @@ To run the tests cases, execute following command
 `docker-compose run --rm artisan test`
 
 
+---
 
 #8 View the project in browser 
 
